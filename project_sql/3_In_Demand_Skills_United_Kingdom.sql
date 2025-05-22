@@ -11,4 +11,9 @@ GROUP BY
 ORDER BY in_demand_count DESC
 LIMIT 10
 
-/* The most in-demand skills for data analysis in the UK are SQL, Excel, and Power BI, indicating a strong preference for tools that facilitate data manipulation, visualization, and business intelligence. These skills are followed by programming languages like Python and R, which are crucial for advanced data analysis and statistical modeling. The demand for these skills suggests that employers in the UK are looking for professionals who can not only analyse data but also present their findings effectively using various tools and technologies.*/
+/* The most in-demand skills for data analysis in the UK are SQL, Excel, and Power BI, indicating a strong preference
+for tools that facilitate data manipulation, visualization, and business intelligence.
+These skills are followed by programming languages like Python and R, which are crucial for advanced data analysis
+and statistical modeling.
+The demand for these skills suggests that employers in the UK are looking for professionals who can not only analyse data
+but also present their findings effectively using various tools and technologies.*/
