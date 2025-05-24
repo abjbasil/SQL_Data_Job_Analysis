@@ -181,4 +181,11 @@ Jupyter, used with Python, stands at £103,620
 
 
 # What I Learned -
-# Conclusion -
+
+Using advanced SQL techniques, I leveraged SELECT statements and a range of aggregate functions to extract meaningful insights from the data. By implementing various types of JOIN operations, I was able to integrate the datasets effectively, enabling a more comprehensive analysis of how skill sets correlate with job roles and compensation across different industries.
+
+Throughout the project, I deepened my understanding of SQL's more advanced functionalities, including grouping, filtering, and aggregating data to uncover trends and patterns. This analytical process allowed me to not only manipulate the data to return targeted results but also to distill the findings into actionable insights that reflect the structure and demands of the UK data job market.
+
+
+
+
