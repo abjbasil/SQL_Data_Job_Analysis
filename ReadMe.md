@@ -103,6 +103,20 @@ Candidates skilled in both data analysis and engineering platforms command top-t
 
 The process involved creating a query to count and rank skills by frequency, thereby providing insight into the most prevalent skills mentioned in job descriptions among the United Kingdom.
 
+```sql 
+SELECT
+    skills,
+COUNT (skills_job_dim.job_id) AS in_demand_count
+FROM job_postings_fact
+INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
+INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id 
+WHERE job_title_short = 'Data Analyst' AND
+job_country = 'United Kingdom'
+GROUP BY 
+    skills
+ORDER BY in_demand_count DESC
+LIMIT 10
+```
 Below is a breakdown of the skills:
 
 SQL and Excel remain the most in-demand skills, with over 4,000 mentions each, showing that core data tools are still essential for data analysis roles.
@@ -123,6 +137,47 @@ Skills like Python, Azure, and Go are appearing more often, indicating that data
 | Azure      | 680                 |
 | Go         | 548                 |
 | PowerPoint | 527                 |
+
+
+## 4) Which skills are associated with higher salaries?
+
+Taking a further look at higher salaries and then pairing it will skills let me know which would be optimal to learn.
+
+```sql
+SELECT
+    skills,
+    ROUND(AVG(salary_year_avg),2) AS yearly_average
+FROM job_postings_fact
+INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
+INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id 
+WHERE job_title_short = 'Data Analyst' AND
+salary_year_avg IS NOT NULL AND
+job_location = 'United Kingdom'
+GROUP BY 
+    skills
+ORDER BY yearly_average DESC
+```
+Below is a breakdown of the results:
+
+**Top Insights**
+
+Highest-paying skills:
+🥇 Shell & Flow – £156,500
+🥈 Looker – £118,140
+🥉 SAS – £109,000
+
+**Popular analytics tools with lower averages:**
+
+SQL – only £65,818 despite its high demand
+
+Power BI – £74,563
+
+Excel – £82,494
+
+**Programming tools:**
+
+Python (£83,968) outpaces R (£81,709) and Go (£77,635)
+Jupyter, used with Python, stands at £103,620
 
 
 # What I Learned -
